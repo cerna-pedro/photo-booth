@@ -1,3 +1,11 @@
+:root {
+  --video: 80vw;
+  --background: rgb(0, 75, 133);
+  --color: white;
+  --black: #333;
+  --max-width: 960px
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,14 +13,118 @@
 }
 
 html {
-  background-color: black;
-  color: white;
+  background-color: var(--background);
+  color: var(--color);
+  font-family: "Nothing You Could Do", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
 }
 
-video{
-  width: 95%;
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  padding: 0.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 6rem;
+  height: 3rem;
+  background: var(--black);
+  border: none;
+  box-shadow: 5px 5px 10px var(--black);
+  transition: transform 0.3s ease;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
+video,
 canvas {
-  width: 95%
+  max-width: var(--max-width);
+  width: var(--video);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  padding-top: 0.5rem;
+  flex: 1;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section > * {
+  margin-bottom: 1rem;
+}
+
+.filterContainer {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: var(--video);
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.filterContainer button {
+  background: rgb(100, 100, 100);
+}
+
+footer {
+  flex: 0;
+  font-size: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+.sepia {
+  filter: sepia(1);
+}
+
+.grayscale {
+  filter: grayscale(1);
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.red {
+  filter: hue-rotate(270deg);
+}
+
+.blue {
+  filter: hue-rotate(180deg);
+}
+
+.green {
+  filter: hue-rotate(90deg);
+}
+
+.saturate {
+  filter: saturate(2.5);
+}
+
+.reset {
+  filter: none;
+}
+
+.active {
+  background: var(--color) !important;
+  color: var(--black);
 }

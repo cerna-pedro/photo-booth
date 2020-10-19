@@ -70,8 +70,8 @@ const Home = () => {
             ...
           </h2>
           <p>
-            You have to enable your front-facing camera for this web app to
-            work. The sadness{" "}
+            You have to enable access to your camera for this web app to work.
+            The sadness{" "}
             <span role="img" aria-label="Loudly Crying Face">
               😭
             </span>
@@ -103,7 +103,6 @@ const Home = () => {
             ref={canvasRef}
           ></canvas>
 
-          {isStreaming && <StyleButtons video={videoRef} />}
           <button type="button" onClick={isStreaming ? snapPic : tryAgain}>
             {isStreaming ? (
               <>
@@ -121,6 +120,7 @@ const Home = () => {
               </>
             )}
           </button>
+          {isStreaming && <StyleButtons video={videoRef} />}
           {!isStreaming && (
             <button type="button" onClick={download}>
               Download{" "}

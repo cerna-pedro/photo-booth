@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import StyleButtons from "../components/StyleButtons";
+import SEO from "../components/SEO";
 
 /* eslint-disable jsx-a11y/media-has-caption */
 
